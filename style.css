@@ -1,0 +1,155 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f6f8fa;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 220px;
+    background: linear-gradient(135deg, #22223b 70%, #4a4e69 100%);
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    padding: 30px 0;
+    box-shadow: 2px 0 10px rgba(34,34,59,0.08);
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.6em;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-left: 4px solid transparent;
+    font-size: 1.08em;
+}
+
+.sidebar ul li:hover {
+    background: #4a4e69;
+    border-left: 4px solid #9a8c98;
+}
+
+.main {
+    margin-left: 240px;
+    padding: 40px 30px 40px 30px;
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #22223b;
+    font-weight: 600;
+}
+
+.profile-section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(34,34,59,0.07);
+    padding: 25px 30px;
+    margin-bottom: 30px;
+}
+
+.profile-section h3 {
+    margin-top: 0;
+    color: #4a4e69;
+    font-weight: 600;
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #9a8c98 60%, #c9ada7 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(34,34,59,0.07);
+    padding: 30px 0;
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.15s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(34,34,59,0.13);
+}
+
+.stat-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.15em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.stat-card p {
+    font-size: 2.1em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.skills-section, .education-section, .projects {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(34,34,59,0.07);
+    padding: 22px 30px;
+    margin-bottom: 25px;
+}
+
+.skills-section h4, .education-section h4, .projects h4 {
+    margin-top: 0;
+    color: #4a4e69;
+    font-weight: 600;
+}
+
+.skill-list, .education-list, .project-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li, .education-list li, .project-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05em;
+    color: #22223b;
+}
+
+.skill-list li:last-child, .education-list li:last-child, .project-list li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+    .main {
+        margin-left: 0;
+        padding: 20px 5vw;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        padding: 15px 0;
+    }
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
