@@ -162,6 +162,99 @@ body{
     color: #adadd6;
 }
 
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.project-item {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 13px;
+    padding: 20px 28px;
+}
+
+.project-preview img {
+    width: 384px;
+    height: 216px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #adadd6;
+    background: #eee;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.project-caption {
+    font-size: 1.08em;
+    color: #adadd6;
+    text-align: center;
+    margin-top: 0;
+    opacity: 0.92;
+    font-weight: 500;
+    max-width: 340px;
+    word-break: break-word;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 18px;
+    gap: 4px;
+}
+
+.project-info strong {
+    color: #adadd6;
+    font-size: 1.08em;
+    margin-bottom: 2px;
+}
+
+.project-year, .project-info span {
+    color: #22223b;
+    font-size: 0.98em;
+    opacity: 0.85;
+}
+
+.profile-section,
+.stats,
+.skills-section,
+.education-section,
+.projects,
+.project-item,
+.skill-list li{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.profile-section.visible,
+.stats.visible,
+.skills-section.visible,
+.education-section.visible,
+.projects.visible,
+.project-item.visible,
+.skill-list li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 900px) {
     .main {
         margin-left: 0;

@@ -32,7 +32,7 @@
                 <p>4</p>
             </div>
             <div class="stat-card" style="cursor: pointer;" onclick="document.getElementById('skill-list').scrollIntoView({ behavior:'smooth' });">
-                <h3>Skill Utama</h3>
+                <h3>Skill</h3>
                 <p>6</p>
             </div>
             <div class="stat-card">
@@ -42,13 +42,14 @@
         </div>
         
         <div class="skills-section">
-            <h3 id="skill-list">Skill</h3>
+            <h3 id="skill-list">Skill yang Dipelajari</h3>
             <ul class="skill-list">
                 <li style="color: #F16A2F;">HTML</li>
                 <li style="color: #7B7FB5;">PHP</li>
                 <li style="color: #F1DB54;">JavaScript</li>
                 <li style="color: #347AAE;">Python</li>
                 <li style="color: #189555;">MongoDB</li>
+                <li style="color: #F29111;">MySQL</li>
                 <li style="color: #19b4b4;">Prompt Engineering</li>
             </ul>
         </div>
@@ -63,13 +64,52 @@
         </div>
         
         <div class="projects">
-            <h3>Proyek Terbaru</h3>
+            <h3>Project yang Sudah Dibuat</h3>
             <ul class="project-list">
-                <li>Aplikasi To-Do List - 2023</li>
-                <li>Website Portofolio Pribadi - 2023</li>
-                <li>Landing Page Seminar IT - 2022</li>
+                <li class="project-item">
+                    <div class="project-preview">
+                        <img src="assets/WhatsApp Image 2024-06-15 at 11.26.20.jpeg" alt="Preview Website Manajemen Data Siswa" />
+                        <div class="project-caption">Aplikasi untuk manajemen data siswa sekolah berbasis web.</div>
+                    </div>
+                </li>
+                <li class="project-item">
+                    <div class="project-preview">
+                        <img src="img/portofolio2.png" alt="Preview Website E-Commerce Penjualan Alat Tulis" />
+                        <div class="project-caption">Platform e-commerce untuk penjualan alat tulis secara online.</div>
+                    </div>
+                </li>
+                <li class="project-item">
+                    <div class="project-preview">
+                        <img src="img/portofolio3.png" alt="Preview Chatbot Telegram Informasi Akademik dengan NLP" />
+                        <div class="project-caption">Chatbot Telegram yang memberikan informasi akademik menggunakan NLP.</div>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pilih semua elemen yang ingin dianimasikan
+            const animatedElements = document.querySelectorAll(
+                '.profile-section, .stats, .skills-section, .education-section, .projects, .project-item, .skill-list li'
+            );
+
+            // Observer untuk menambahkan class 'visible' saat elemen muncul di viewport
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // animasi hanya sekali
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            // Observe setiap elemen
+            animatedElements.forEach(el => {
+                if (el) observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
