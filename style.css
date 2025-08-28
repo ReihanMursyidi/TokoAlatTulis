@@ -43,8 +43,19 @@ body {
     border-left: 4px solid #9a8c98;
 }
 
+body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: url('/assets/vecteezy_geometric-dark-overlap-background-with-golden-light-effect_11992267.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 .main {
-    margin-left: 240px;
     padding: 40px 30px 40px 30px;
     min-height: 100vh;
 }
@@ -57,17 +68,25 @@ body {
 }
 
 .profile-section {
-    background: #fff;
+    background: rgba(56, 49, 49, 0.3);
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(34,34,59,0.07);
     padding: 25px 30px;
     margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid #adadd6;
 }
 
 .profile-section h3 {
     margin-top: 0;
-    color: #4a4e69;
+    color: #adadd6;
     font-weight: 600;
+}
+
+.profile-section p {
+    color: #adadd6;
+    line-height: 1.6;
 }
 
 .stats {
@@ -77,7 +96,7 @@ body {
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #9a8c98 60%, #c9ada7 100%);
+    background: linear-gradient(135deg, #adadd6 60%, #7e7ec2 100%);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(34,34,59,0.07);
     padding: 30px 0;
@@ -106,16 +125,19 @@ body {
 }
 
 .skills-section, .education-section, .projects {
-    background: #fff;
+    background: rgba(56, 49, 49, 0.3);
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(34,34,59,0.07);
     padding: 22px 30px;
     margin-bottom: 25px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid #adadd6;
 }
 
-.skills-section h4, .education-section h4, .projects h4 {
+.skills-section h3, .education-section h3, .projects h3 {
     margin-top: 0;
-    color: #4a4e69;
+    color: #adadd6;
     font-weight: 600;
 }
 
@@ -127,13 +149,17 @@ body {
 
 .skill-list li, .education-list li, .project-list li {
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #adadd6;
     font-size: 1.05em;
     color: #22223b;
 }
 
 .skill-list li:last-child, .education-list li:last-child, .project-list li:last-child {
     border-bottom: none;
+}
+
+.education-section li, .projects li {
+    color: #adadd6;
 }
 
 @media (max-width: 900px) {
