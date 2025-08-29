@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Portofolio Fresh Graduate</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <!-- <div class="sidebar">
@@ -29,7 +29,7 @@
         <div class="stats">
             <div class="stat-card">
                 <h3>Proyek Portofolio</h3>
-                <p>4</p>
+                <p>3</p>
             </div>
             <div class="stat-card" style="cursor: pointer;" onclick="document.getElementById('skill-list').scrollIntoView({ behavior:'smooth' });">
                 <h3>Skill</h3>
@@ -67,25 +67,37 @@
             <h3>Project yang Sudah Dibuat</h3>
             <ul class="project-list">
                 <li class="project-item">
-                    <div class="project-preview">
-                        <img src="assets/WhatsApp Image 2024-06-15 at 11.26.20.jpeg" alt="Preview Website Manajemen Data Siswa" />
+                    <div class="project-preview" onclick="openCarousel(0,0)" style="cursor: pointer;">
+                        <img src="assets/12.jpg" alt="Preview Website Manajemen Data Siswa" />
                         <div class="project-caption">Aplikasi untuk manajemen data siswa sekolah berbasis web.</div>
                     </div>
                 </li>
                 <li class="project-item">
-                    <div class="project-preview">
-                        <img src="img/portofolio2.png" alt="Preview Website E-Commerce Penjualan Alat Tulis" />
+                    <div class="project-preview" onclick="openCarousel(1,0)" style="cursor: pointer;">
+                        <img src="assets/508577.jpg" alt="Preview Website E-Commerce Penjualan Alat Tulis" />
                         <div class="project-caption">Platform e-commerce untuk penjualan alat tulis secara online.</div>
                     </div>
                 </li>
                 <li class="project-item">
-                    <div class="project-preview">
-                        <img src="img/portofolio3.png" alt="Preview Chatbot Telegram Informasi Akademik dengan NLP" />
+                    <div class="project-preview" onclick="openCarousel(2,0)" style="cursor: pointer;">
+                        <img src="assets/14.jpg" alt="Preview Chatbot Telegram Informasi Akademik dengan NLP" />
                         <div class="project-caption">Chatbot Telegram yang memberikan informasi akademik menggunakan NLP.</div>
                     </div>
                 </li>
             </ul>
         </div>
+    </div>
+
+    <!-- Modal Carousel -->
+    <div id="carouselModal" class="carousel-modal">
+        <span class="carousel-close" onclick="event.stopPropagation(); closeCarousel()" aria-label="Tutup">&times;</span>
+        <img class="carousel-image" id="carouselImage" src="" alt="Preview Project">
+        <div class="carousel-controls">
+            <button onclick="prevImage()">&#8592;</button>
+            <button onclick="nextImage()">&#8594;</button>
+        </div>
+        <div class="carousel-caption" id="carouselCaption"></div>
+        <div class="carousel-indicator" id="carouselIndicator"></div>
     </div>
 
     <script>
@@ -105,11 +117,13 @@
                 });
             }, { threshold: 0.2 });
 
-            // Observe setiap elemen
+            // Observe setiap el
             animatedElements.forEach(el => {
                 if (el) observer.observe(el);
             });
         });
+
     </script>
+    <script src="preview-project.js"></script>
 </body>
 </html>
