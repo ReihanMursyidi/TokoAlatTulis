@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Dashboard Portofolio Fresh Graduate</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- <div class="sidebar">
@@ -19,29 +22,28 @@
     <div class="main">
         
         <div class="profile-section">
-            <h3>Profil Singkat</h3>
-            <p>
-                Halo, perkenalkan nama saya Reihan Mursyidi.<br>
-                Saya adalah fresh graduate S1 Fakultas Ilmu Komputer Teknik Informatika yang antusias memulai karir sebagai Programmer.<br>
-            </p>
+            <h2 class="profile-title">
+                Halo, perkenalkan nama saya <span class="profile-name">Reihan Mursyidi</span><br>
+                Saya adalah fresh graduate yang antusias memulai karir sebagai Programmer<br>
+            </h2>
         </div>
         
         <div class="stats">
-            <div class="stat-card">
+            <div class="stat-card" style="background: linear-gradient(135deg, #db4848 60%, #c27e7e 100%);" onclick="document.getElementById('projects').scrollIntoView({ behavior:'smooth' });">
                 <h3>Proyek Portofolio</h3>
                 <p>3</p>
             </div>
-            <div class="stat-card" style="cursor: pointer;" onclick="document.getElementById('skill-list').scrollIntoView({ behavior:'smooth' });">
+            <div class="stat-card" style="background: linear-gradient(135deg, #48db5c 60%, #7ec287 100%);" onclick="document.getElementById('skill-section').scrollIntoView({ behavior:'smooth' });">
                 <h3>Skill</h3>
                 <p>6</p>
             </div>
-            <div class="stat-card">
+            <div class="stat-card " style="background: linear-gradient(135deg, #4849db 60%, #7e7ec2 100%);">
                 <h3>Sertifikat</h3>
                 <p>2</p>
             </div>
         </div>
         
-        <div class="skills-section">
+        <div class="skills-section" id="skill-section">
             <h3 id="skill-list">Skill yang Dipelajari</h3>
             <ul class="skill-list">
                 <li style="color: #F16A2F;">HTML</li>
@@ -63,24 +65,24 @@
             </ul>
         </div>
         
-        <div class="projects">
+        <div class="projects" id="projects">
             <h3>Project yang Sudah Dibuat</h3>
             <ul class="project-list">
                 <li class="project-item">
-                    <div class="project-preview" onclick="openCarousel(0,0)" style="cursor: pointer;">
-                        <img src="assets/12.jpg" alt="Preview Website Manajemen Data Siswa" />
+                    <div class="project-preview">
+                        <img src="assets/daftar_siswa (2).png" alt="Preview Website Manajemen Data Siswa" onclick="openCarousel(0,0, event)" style="cursor: pointer;">
                         <div class="project-caption">Aplikasi untuk manajemen data siswa sekolah berbasis web.</div>
                     </div>
                 </li>
                 <li class="project-item">
-                    <div class="project-preview" onclick="openCarousel(1,0)" style="cursor: pointer;">
-                        <img src="assets/508577.jpg" alt="Preview Website E-Commerce Penjualan Alat Tulis" />
+                    <div class="project-preview">
+                        <img src="assets/dashboard_ecommerce.png" alt="Preview Website E-Commerce Penjualan Alat Tulis" onclick="openCarousel(1,0, event)" style="cursor: pointer;">
                         <div class="project-caption">Platform e-commerce untuk penjualan alat tulis secara online.</div>
                     </div>
                 </li>
                 <li class="project-item">
-                    <div class="project-preview" onclick="openCarousel(2,0)" style="cursor: pointer;">
-                        <img src="assets/14.jpg" alt="Preview Chatbot Telegram Informasi Akademik dengan NLP" />
+                    <div class="project-preview">
+                        <img src="assets/14.jpg" alt="Preview Chatbot Telegram Informasi Akademik dengan NLP" onclick="openCarousel(2,0, event)" style="cursor: pointer;">
                         <div class="project-caption">Chatbot Telegram yang memberikan informasi akademik menggunakan NLP.</div>
                     </div>
                 </li>
@@ -115,7 +117,7 @@
                         observer.unobserve(entry.target); // animasi hanya sekali
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.3 });
 
             // Observe setiap el
             animatedElements.forEach(el => {

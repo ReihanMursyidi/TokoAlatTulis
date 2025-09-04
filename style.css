@@ -68,7 +68,6 @@ body{
 }
 
 .profile-section {
-    background: rgba(56, 49, 49, 0.3);
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(34,34,59,0.07);
     padding: 25px 30px;
@@ -76,6 +75,7 @@ body{
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid #adadd6;
+    max-width: 95%;
 }
 
 .profile-section h3 {
@@ -84,9 +84,23 @@ body{
     font-weight: 600;
 }
 
-.profile-section p {
+.profile-title {
+    font-family: 'Lexend', 'Poetsen One', Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
     color: #adadd6;
-    line-height: 1.6;
+    text-shadow: 0 2px 16px rgba(34,34,59,0.18), 0 1px 0 #adadd6;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0;
+    padding: 0 10px;
+    max-width: 870px;   
+}
+.profile-name {
+    color: #F29111;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
 .stats {
@@ -96,7 +110,6 @@ body{
 }
 
 .stat-card {
-    background: linear-gradient(135deg, #adadd6 60%, #7e7ec2 100%);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(34,34,59,0.07);
     padding: 30px 0;
@@ -104,6 +117,8 @@ body{
     text-align: center;
     color: #fff;
     transition: transform 0.15s;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
 }
 
 .stat-card:hover {
@@ -121,11 +136,11 @@ body{
 .stat-card p {
     font-size: 2.1em;
     margin: 0;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .skills-section, .education-section, .projects {
-    background: rgba(56, 49, 49, 0.3);
+
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(34,34,59,0.07);
     padding: 22px 30px;
@@ -138,7 +153,9 @@ body{
 .skills-section h3, .education-section h3, .projects h3 {
     margin-top: 0;
     color: #adadd6;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
 }
 
 .skill-list, .education-list, .project-list {
@@ -152,6 +169,8 @@ body{
     border-bottom: 1px solid #adadd6;
     font-size: 1.05em;
     color: #22223b;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
 }
 
 .skill-list li:last-child, .education-list li:last-child, .project-list li:last-child {
@@ -199,6 +218,13 @@ body{
     background: #eee;
     display: block;
     margin-bottom: 14px;
+}
+
+.project-preview img:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(34,34,59,0.13);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .project-caption {

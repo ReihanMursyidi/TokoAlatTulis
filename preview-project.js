@@ -1,21 +1,25 @@
 const carouselData = [
     [
         {
-            src: 'assets/12.jpg',
+            src: 'assets/daftar_siswa (2).png',
             caption: 'Aplikasi untuk manajemen data siswa sekolah berbasis web.'
         },
         {
-            src: 'assets/4.1.jpg',
-            caption: 'Fitur tambah, edit, hapus, dan lihat data siswa.'
+            src: 'assets/form_tambah_siswa.png',
+            caption: 'Fitur untuk menambah data siswa baru.'
+        },
+        {
+            src: 'assets/detail_siswa.png',
+            caption: 'Fitur untuk melihat detail informasi siswa.'
         },
     ],
     [
         {
-            src: 'assets/508577.jpg',
+            src: 'assets/dashboard_ecommerce.png',
             caption: 'Tampilan awal aplikasi e-commerce.'
         },
         {
-            src: 'assets/9.jpg',
+            src: 'assets/halaman_produk.png',
             caption: 'Platform e-commerce untuk penjualan alat tulis secara online.'
         },
         {
@@ -38,7 +42,11 @@ const carouselData = [
 let currentProject = 0;
 let currentCarousel = 0;
 
-function openCarousel(projectIndex, imageIndex) {
+function openCarousel(projectIndex, imageIndex, event) {
+    if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+    }
     currentProject = projectIndex;
     currentCarousel = imageIndex;
     document.getElementById('carouselModal').classList.add('active');
@@ -70,12 +78,17 @@ function nextImage() {
     showCarouselImage();
 }
 
-// Optional: Tutup modal jika klik di luar gambar
 document.addEventListener('click', function(e) {
-    const modal = document.getElementById('carouselModal').classList.add('active');
-    if (modal.classList.contains('active') && !e.target.closest('.carousel-image,.carousel-controls, .carousel-caption')) {
-        if (!e.target.classList.contains('carousel-close')) closeCarousel();
+  const modal = document.getElementById('carouselModal');
+  if (!modal) return; // kalau modal belum ada, langsung keluar
+
+  if (modal.classList.contains('active')) {
+    const insideModal = e.target.closest('#carouselModal');
+    const isCloseBtn = e.target.classList.contains('carousel-close');
+    if (!insideModal && !isCloseBtn) {
+      closeCarousel();
     }
+  }
 });
 
 document.addEventListener('keydown', (e) => {
